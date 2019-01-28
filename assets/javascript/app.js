@@ -1,4 +1,4 @@
-var topics = ["Samurai Champloo", "Hellsing", "Dragon Ball Z", "Cowboy Bebop", "Pokemon", "Death Note", "Fullmetal Alchemist", "Attack on Titan"];
+var anime = ["Samurai Champloo", "Hellsing", "Dragon Ball Z", "Cowboy Bebop", "Pokemon", "Death Note", "Fullmetal Alchemist", "Attack on Titan"];
 
 var app = $('#shows-view');
 var still ='';
@@ -32,10 +32,6 @@ function displayShowInfo(){
             
             still = results[i].images.fixed_height_still.url;
             animate = results[i].images.fixed_height.url;
-            // console.log("still", still)
-            // console.log("animate",animate)
-            
-            // console.log(rating);
             
             var $img = $('<img>');
             $img.attr('data-still', still);
@@ -50,13 +46,9 @@ function displayShowInfo(){
             $img.on('click', function() {
                 var state = $(this).attr('data-state');
                 if (state === 'still') {
-                    // var dataAnimate = $(this).attr('src', );
-                    // console.log($(this).attr('data-animate'));
                     $(this).attr('src', $(this).attr('data-animate'));    
                     $(this).attr('data-state', 'animate');
                 } else {
-                    // var dataStill = $(this).attr('src', still);
-                    // console.log($img.attr('data-still'));
                     $(this).attr('src', $(this).attr('data-still'));    
                     $(this).attr('data-state', 'still');
                 }
@@ -69,11 +61,11 @@ function displayShowInfo(){
 function renderButtons(){
     $("#buttons-view").empty();
     
-    for(var i =0; i < topics.length; i++){
+    for(var i =0; i < anime.length; i++){
         var a = $("<button>");
         a.addClass("show");
-        a.attr("data-name", topics[i]);
-        a.text(topics[i]);
+        a.attr("data-name", anime[i]);
+        a.text(anime[i]);
         $("#buttons-view").append(a);
         $('#tv-input').val('');
     }
@@ -84,7 +76,7 @@ $("#add-show").on("click", function(event) {
     app.empty();
     event.preventDefault();
     var tv = $("#tv-input").val().trim();
-    topics.push(tv);
+    anime.push(tv);
     renderButtons();
 });
 

@@ -6,15 +6,48 @@
 h1 {
     text-align: center;
     font-family: 'ZCOOL KuaiLe', cursive;
-    font-size: 50px;
-    text-emphasis: bold;
-    text-decoration-color: aliceblue;
+    font-size: 65px;
 }
 
 .jumbotron {
     background-color: orange;
 }
 
-body {
-    background-color: aqua;
+button {
+    margin-right: 25px;
+    margin-left: 25px;
+    margin-top: 15px;
+    border-radius: 8px;
+    font-size: 18px;
+    font-family: 'ZCOOL KuaiLe', cursive;
+}
+
+label {
+    margin-left: 25px;
+    font-size: 20px;
+    font-family: 'ZCOOL KuaiLe', cursive;
+    color:white;
+    
+}
+
+#add-show {
+    border-radius: 8px;
+    font-size: 18px;
+    font-family: 'ZCOOL KuaiLe', cursive;
+}
+
+p {
+    color: white;
+    font-size: 20px;
+    font-family: 'ZCOOL KuaiLe', cursive;
+}
+
+img {
+    width: 100%;
+}
+
+@media screen and (max-width: 768px) {
+    body {
+      background-color: #333;
+    }
 }
